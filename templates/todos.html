@@ -1,0 +1,8 @@
+{% for todo in todos %}
+<tr>
+    <td>{{ todo.name }}</td>
+    <td><button hx-put="{{ todo.id }}/{{ todo.done }}" hx-target="#todos">{{ todo.done }}</button></td>
+    <td><button hx-delete="{{ todo.id }}" hx-target="#todos">Delete</button></td>
+</tr>
+{% endfor %}
+<input placeholder="Task" name="task" id="task-input" hx-swap-oob="true">
